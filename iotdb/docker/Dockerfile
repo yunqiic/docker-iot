@@ -26,7 +26,7 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
 COPY sources.list /etc/apt/sources.list
 
 RUN apt update \
-  && apt install lsof dos2unix procps unzip dumb-init -y \
+  && apt install lsof dos2unix procps unzip dumb-init wget -y \
   && apt autoremove -y \
   && apt purge --auto-remove -y \
   && apt clean -y
