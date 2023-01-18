@@ -37,6 +37,14 @@ sudo docker ps -a|grep iotdb
 sudo docker exec -it iotdb bash
 
 /iotdb/sbin/start-cli.sh -h 127.0.0.1 -p 6667 -u root -pw root
+CREATE DATABASE root.ln
+SHOW DATABASES
+CREATE TIMESERIES root.ln.wf01.wt01.status WITH DATATYPE=BOOLEAN, ENCODING=PLAIN
+CREATE TIMESERIES root.ln.wf01.wt01.temperature WITH DATATYPE=FLOAT, ENCODING=RLE
+SHOW TIMESERIES
+SHOW TIMESERIES root.ln.wf01.wt01.status
+INSERT INTO root.ln.wf01.wt01(timestamp,status) values(100,true);
+INSERT INTO root.ln.wf01.wt01(timestamp,status,temperature) values(200,false,20.71)
 
 docker stop iotdb
 docker rm iotdb
