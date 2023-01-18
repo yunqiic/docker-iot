@@ -24,6 +24,7 @@ wget https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/1.0.0/apache-iotdb-1.0.0-
 
 cd docker
 sudo docker build -t yiluxiangbei/iotdb:v1.0.0 .
+sudo docker push yiluxiangbei/iotdb:v1.0.0
 
 find . -name "README.md"|grep docs|xargs -I {} grep 'docker run' {}
 ```
