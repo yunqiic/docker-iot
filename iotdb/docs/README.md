@@ -33,6 +33,7 @@ docker run --name iotdb -p 6667:6667 -v /home/boring/iotdb-0.12.6/data:/iotdb/da
 sudo docker run --name iotdb -it --rm -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs yiluxiangbei/iotdb:v1.0.0 bash
 
 sudo docker run --name iotdb -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs -d yiluxiangbei/iotdb:v1.0.0 /iotdb/sbin/start-standalone.sh
+sudo docker ps -a|grep iotdb
 sudo docker exec -it iotdb bash
 
 docker stop iotdb
