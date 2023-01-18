@@ -1,0 +1,2 @@
+docker logs -f iotdb
+[dumb-init] /iotdb/bin/start-standalone.sh: No such file or directory
