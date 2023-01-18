@@ -27,6 +27,7 @@ sudo docker build -t yiluxiangbei/iotdb:v1.0.0 .
 sudo docker push yiluxiangbei/iotdb:v1.0.0
 
 cd git/docker-iot/iotdb/docker
+
 docker run --name iotdb -p 6667:6667 -v /home/boring/iotdb-0.12.6/data:/iotdb/data -v /home/boring/iotdb-0.12.6/logs:/iotdb/logs -d iotdb:0.12.6 /iotdb/bin/start-server.sh
 
 sudo docker run --name iotdb -it --rm -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs yiluxiangbei/iotdb:v1.0.0 bash
