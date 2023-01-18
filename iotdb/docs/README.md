@@ -7,6 +7,7 @@ yiluxiangbei/maven:3.8.6-openjdk-11
 
 cd git/iotdb
 sudo docker run -it --rm -v "$HOME/.m2":/root/.m2 -v "$PWD:/iotdb" maven:3.8.6-openjdk-11 bash
+cd iotdb
 mvn clean package -pl distribution -am -DskipTests
 
 find . -name "README.md"|grep docs|xargs -I {} grep 'docker run' {}
