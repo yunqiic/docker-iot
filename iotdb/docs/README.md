@@ -10,6 +10,20 @@ sudo docker run -it --rm -v "$HOME/.m2":/root/.m2 -v "$PWD:/iotdb" maven:3.8.6-o
 cd iotdb
 mvn clean package -pl distribution -am -DskipTests
 
+wget https://downloads.apache.org/iotdb/0.12.6/apache-iotdb-0.12.6-server-bin.zip
+wget https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/0.12.6/apache-iotdb-0.12.6-server-bin.zip
+
+https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/1.0.0/apache-iotdb-1.0.0-cli-bin.zip
+https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/1.0.0/apache-iotdb-1.0.0-confignode-bin.zip
+https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/1.0.0/apache-iotdb-1.0.0-datanode-bin.zip
+https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/1.0.0/apache-iotdb-1.0.0-grafana-plugin-bin.zip
+https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/1.0.0/apache-iotdb-1.0.0-library-udf-bin.zip
+https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/1.0.0/apache-iotdb-1.0.0-source-release.zip
+
+wget https://mirrors.tuna.tsinghua.edu.cn/apache/iotdb/1.0.0/apache-iotdb-1.0.0-all-bin.zip
+
+docker build -t yiluxiangbei/iotdb:v1.0.0 .
+
 find . -name "README.md"|grep docs|xargs -I {} grep 'docker run' {}
 ```
 
