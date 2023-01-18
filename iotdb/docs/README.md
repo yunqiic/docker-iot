@@ -26,10 +26,16 @@ cd docker
 sudo docker build -t yiluxiangbei/iotdb:v1.0.0 .
 sudo docker push yiluxiangbei/iotdb:v1.0.0
 
+cd git/docker-iot/iotdb/docker
 docker run --name iotdb -p 6667:6667 -v /home/boring/iotdb-0.12.6/data:/iotdb/data -v /home/boring/iotdb-0.12.6/logs:/iotdb/logs -d iotdb:0.12.6 /iotdb/bin/start-server.sh
 
-sudo docker run --name iotdb -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs -d yiluxiangbei/iotdb:v1.0.0 /iotdb/bin/start-standalone.sh
+sudo docker run --name iotdb -it --rm -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs yiluxiangbei/iotdb:v1.0.0 bash
+
+sudo docker run --name iotdb -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs -d yiluxiangbei/iotdb:v1.0.0 /iotdb/sbin/start-standalone.sh
 sudo docker exec -it iotdb bash
+
+docker stop iotdb
+docker rm iotdb
 
 docker logs -f iotdb
 [dumb-init] /iotdb/bin/start-standalone.sh: No such file or directory
