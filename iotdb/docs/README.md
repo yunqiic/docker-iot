@@ -47,6 +47,10 @@ docker logs -f iotdb
 find . -name "README.md"|grep docs|xargs -I {} grep 'docker run' {}
 ```
 
+```
+docker iotdb
+```
+
 ```shell
 sudo docker run -ti --volume="$(pwd)":/app --rm paddlepaddle/paddle:2.2.0 bash
 sudo docker run -ti --volume="$(pwd)":/app --rm python:3.6 bash
