@@ -22,6 +22,9 @@ FROM openjdk:11-jre-slim
 ARG version=1.0.0
 ARG target=apache-iotdb-${version}-all-bin
 
+RUN cp /etc/apt/sources.list /etc/apt/sources.list.bak
+COPY sources.list /etc/apt/sources.list
+
 RUN apt update \
   && apt install lsof dos2unix procps unzip dumb-init -y \
   && apt autoremove -y \
