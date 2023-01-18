@@ -45,6 +45,10 @@ SHOW TIMESERIES
 SHOW TIMESERIES root.ln.wf01.wt01.status
 INSERT INTO root.ln.wf01.wt01(timestamp,status) values(100,true);
 INSERT INTO root.ln.wf01.wt01(timestamp,status,temperature) values(200,false,20.71)
+SELECT status FROM root.ln.wf01.wt01
+SELECT * FROM root.ln.wf01.wt01
+SET time_zone=+08:00
+SELECT * FROM root.ln.wf01.wt01
 
 docker stop iotdb
 docker rm iotdb
