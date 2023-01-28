@@ -62,7 +62,9 @@ SELECT * FROM root.ln.wf01.wt01
 SET time_zone=+08:00
 SELECT * FROM root.ln.wf01.wt01
 
+/iotdb/sbin/start-cli.sh -h 127.0.0.1 -p 6667 -u root -pw root
 SHOW DATABASES
+SHOW TIMESERIES
 SHOW TIMESERIES root.sg.abc
 SELECT * FROM root.sg.abc
 
