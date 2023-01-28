@@ -7,6 +7,7 @@ sudo docker run -d --name emqx -p 1883:1883 -p 8024:8083 -p 8025:8084 -p 8883:88
 1883
 abc
 abc
+Topic:t/1
 {
   "bar": "0.2"
 }
