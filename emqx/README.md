@@ -7,6 +7,9 @@ sudo docker run -d --name emqx -p 1883:1883 -p 8024:8083 -p 8025:8084 -p 8883:88
 1883
 abc
 abc
+{
+  "bar": "0.2"
+}
 
 http://49.232.6.131:18083/
 admin
