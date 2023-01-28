@@ -1,0 +1,5 @@
+docker-compose ps
+Name               Command               State    Ports
+-------------------------------------------------------
+emqx1   /usr/bin/docker-entrypoint ...   Exit 1
+emqx2   /usr/bin/docker-entrypoint ...   Exit 1
