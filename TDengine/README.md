@@ -24,4 +24,11 @@ sudo docker run -d --name tdengine --network td-net \
 sudo docker run --rm -it --network td-net -e TAOS_FIRST_EP=tdengine --entrypoint=taos tdengine/tdengine
 # or
 #sudo docker run --rm -it --network td-net --entrypoint=taos tdengine/tdengine -h tdengine
+
+cd go
+sudo docker build -t app -f Dockerfile .
+sudo docker run --rm --network td-net app app -h tdengine -p 6030
+
+cd docker
+VERSION=3.0.0.0 docker-compose up -d
 ```
