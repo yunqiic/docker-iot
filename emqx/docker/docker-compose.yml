@@ -22,7 +22,7 @@ services:
       - 8024:8083
       - 8025:8084
       - 8883:8883
-      - 18083:18083 
+      - 18083:18083
     volumes:
       - $PWD/emqx1_data:/opt/emqx/data
 
