@@ -16,6 +16,13 @@ http://49.232.6.131:18083/
 admin
 public
 
+test
+test
+
+Remark
+administrator
+viewer
+
 # rule
 SELECT
   payload.msg as msg
