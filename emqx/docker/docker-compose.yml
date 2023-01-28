@@ -24,7 +24,7 @@ services:
       - 8883:8883
       - 18083:18083
     volumes:
-      - $PWD/emqx1_data:/opt/emqx/data
+      - ./emqx1_data:/opt/emqx/data
 
   emqx2:
     image: emqx:5.0.14
@@ -43,7 +43,7 @@ services:
         aliases:
         - node2.emqx.com
     volumes:
-      - $PWD/emqx2_data:/opt/emqx/data
+      - ./emqx2_data:/opt/emqx/data
 
 networks:
   emqx-bridge:
