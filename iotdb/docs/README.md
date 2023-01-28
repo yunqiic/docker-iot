@@ -47,6 +47,7 @@ tail -f logs/*.log
 172.21.16.11
 2883
 
+sudo docker exec -it iotdb bash
 /iotdb/sbin/start-cli.sh -h 127.0.0.1 -p 6667 -u root -pw root
 CREATE DATABASE root.ln
 SHOW DATABASES
@@ -60,6 +61,9 @@ SELECT status FROM root.ln.wf01.wt01
 SELECT * FROM root.ln.wf01.wt01
 SET time_zone=+08:00
 SELECT * FROM root.ln.wf01.wt01
+
+SHOW TIMESERIES root.sg.abc
+SELECT * FROM root.sg.abc
 
 docker stop iotdb
 docker rm iotdb
