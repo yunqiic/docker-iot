@@ -54,3 +54,8 @@ Payload Template
  ]
 }
 ```
+
+```
+https://www.emqx.com/zh/blog/store-mqtt-messages-to-time-series-database-iotdb
+https://juejin.cn/post/6992031751790919688
+```
