@@ -39,6 +39,7 @@ sudo docker exec -it iotdb bash
 apt-get install telnet
 sudo docker logs -f iotdb
 telnet localhost 2883
+telnet localhost 6667
 tail -f logs/*.log
 
 /iotdb/sbin/start-cli.sh -h 127.0.0.1 -p 6667 -u root -pw root
