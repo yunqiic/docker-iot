@@ -32,7 +32,8 @@ docker run --name iotdb -p 6667:6667 -v /home/boring/iotdb-0.12.6/data:/iotdb/da
 
 sudo docker run --name iotdb -it --rm -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs yiluxiangbei/iotdb:v1.0.0 bash
 
-sudo docker run --name iotdb -itd -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs yiluxiangbei/iotdb:v1.0.0
+cd git/docker-iot/iotdb/docker
+sudo docker run --name iotdb -itd -p 2883:1883 -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs yiluxiangbei/iotdb:v1.0.0
 sudo docker ps -a|grep iotdb
 sudo docker exec -it iotdb bash
 
