@@ -40,6 +40,8 @@ apt-get install telnet
 sudo docker logs -f iotdb
 telnet localhost 2883
 telnet localhost 6667
+telnet 172.21.16.11 6667
+
 tail -f logs/*.log
 172.21.16.11
 2883
