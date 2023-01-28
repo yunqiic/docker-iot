@@ -1,4 +1,8 @@
 ```shell
+cd docker
+sudo docker-compose up -d
+sudo docker exec -it emqx1 sh -c "emqx_ctl cluster status"
+
 sudo docker run -d --name emqx -p 1883:1883 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:latest
 
 sudo docker run -d --name emqx -p 1883:1883 -p 8024:8083 -p 8025:8084 -p 8883:8883 -p 18083:18083 emqx/emqx:latest
@@ -36,6 +40,7 @@ Remark
 administrator
 viewer
 
+https://www.emqx.com/zh/blog/store-mqtt-messages-to-time-series-database-iotdb
 # rule
 SELECT
   payload.msg as msg
