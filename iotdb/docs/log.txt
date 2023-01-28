@@ -2,3 +2,14 @@ docker logs -f iotdb
 [dumb-init] /iotdb/bin/start-standalone.sh: No such file or directory
 
 5dfb3224ef95   yiluxiangbei/iotdb:v1.0.0                                     "/usr/bin/dumb-init …"   9 days ago      Up 9 days                0.0.0.0:6667->6667/tcp, :::6667->6667/tcp
+
+SHOW TIMESERIES
++-----------------------------+-----+--------+--------+--------+-----------+----+----------+--------+------------------+
+|                   Timeseries|Alias|Database|DataType|Encoding|Compression|Tags|Attributes|Deadband|DeadbandParameters|
++-----------------------------+-----+--------+--------+--------+-----------+----+----------+--------+------------------+
+|root.ln.wf01.wt01.temperature| null| root.ln|   FLOAT|     RLE|     SNAPPY|null|      null|    null|              null|
+|     root.ln.wf01.wt01.status| null| root.ln| BOOLEAN|   PLAIN|     SNAPPY|null|      null|    null|              null|
+|   root.sg.mqttx_ed36b238.bar| null| root.sg|   FLOAT| GORILLA|     SNAPPY|null|      null|    null|              null|
++-----------------------------+-----+--------+--------+--------+-----------+----+----------+--------+------------------+
+Total line number = 3
+It costs 0.030s

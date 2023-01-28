@@ -66,6 +66,9 @@ SHOW DATABASES
 SHOW TIMESERIES root.sg.abc
 SELECT * FROM root.sg.abc
 
+SHOW TIMESERIES root.sg.mqttx_ed36b238.bar
+SELECT * FROM root.sg.mqttx_ed36b238
+
 docker stop iotdb
 docker rm iotdb
 
