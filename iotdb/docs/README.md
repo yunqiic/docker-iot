@@ -41,6 +41,8 @@ sudo docker logs -f iotdb
 telnet localhost 2883
 telnet localhost 6667
 tail -f logs/*.log
+172.21.16.11
+2883
 
 /iotdb/sbin/start-cli.sh -h 127.0.0.1 -p 6667 -u root -pw root
 CREATE DATABASE root.ln
@@ -63,6 +65,15 @@ docker logs -f iotdb
 [dumb-init] /iotdb/bin/start-standalone.sh: No such file or directory
 
 find . -name "README.md"|grep docs|xargs -I {} grep 'docker run' {}
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.21.16.11  netmask 255.255.240.0  broadcast 172.21.31.255
+        inet6 fe80::5054:ff:fec9:1f8f  prefixlen 64  scopeid 0x20<link>
+        ether 52:54:00:c9:1f:8f  txqueuelen 1000  (Ethernet)
+        RX packets 1413152213  bytes 666593816239 (620.8 GiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 1483768630  bytes 417078226940 (388.4 GiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
 
 ```
