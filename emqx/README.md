@@ -4,6 +4,7 @@ sudo docker-compose up -d
 chmod -R 777 emqx1_data/
 chmod -R 777 emqx2_data/
 sudo docker-compose up -d
+sudo docker-compose down
 sudo docker-compose ps
 sudo docker-compose logs -f
 sudo docker exec -it emqx1 sh -c "emqx_ctl cluster status"
