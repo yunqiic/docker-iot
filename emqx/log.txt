@@ -3,3 +3,7 @@ Name               Command               State    Ports
 -------------------------------------------------------
 emqx1   /usr/bin/docker-entrypoint ...   Exit 1
 emqx2   /usr/bin/docker-entrypoint ...   Exit 1
+
+emqx1    | 2023-01-28T10:48:01.167021+00:00 [warning] id: <<"bridge:mqtt:test">>, line: 581, mfa: emqx_resource_worker:handle_query_result/4, msg: recoverable_error, reason: not_connected
+emqx1    | 2023-01-28T10:48:04.696454+00:00 [warning] line: 415, message: <<"resource down: bridge:mqtt:test">>, mfa: emqx_alarm:do_actions/3, msg: alarm_is_activated, name: <<"bridge:mqtt:test">>
+emqx1    | 2023-01-28T10:48:04.696809+00:00 [error] id: <<"bridge:mqtt:test">>, line: 554, mfa: emqx_resource_manager:handle_connected_health_check/1, msg: health_check_failed, status: connecting
