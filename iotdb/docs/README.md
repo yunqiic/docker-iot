@@ -38,6 +38,7 @@ sudo docker ps -a|grep iotdb
 sudo docker exec -it iotdb bash
 sudo docker logs -f iotdb
 telnet localhost 2883
+tail -f logs/*.log
 
 /iotdb/sbin/start-cli.sh -h 127.0.0.1 -p 6667 -u root -pw root
 CREATE DATABASE root.ln
