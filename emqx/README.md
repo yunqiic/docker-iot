@@ -21,4 +21,12 @@ SELECT
     payload.bar as bar
 FROM
     "t/#"
+
+MQTT Bridge
+ClientId
+root
+Username
+root
+Password
+root
 ```
