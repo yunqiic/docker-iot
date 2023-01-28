@@ -67,6 +67,9 @@ SELECT
 FROM
     "t/#"
 
+172.21.16.11
+2883
+
 MQTT Bridge
 ClientId
 root
