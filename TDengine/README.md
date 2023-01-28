@@ -31,4 +31,10 @@ sudo docker run --rm --network td-net app app -h tdengine -p 6030
 
 cd docker
 VERSION=3.0.0.0 docker-compose up -d
+docker-compose ps
+docker-compose exec td-1 taos -s "show dnodes"
+
+VERSION=3.0.0.0 docker stack deploy -c docker-compose.yml taos
+docker stack ps taos
+docker service scale taos_adapter=1
 ```
