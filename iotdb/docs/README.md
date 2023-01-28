@@ -36,6 +36,8 @@ cd git/docker-iot/iotdb/docker
 sudo docker run --name iotdb -itd -p 2883:1883 -p 6667:6667 -v "$(pwd)"/data:/iotdb/data -v "$(pwd)"/logs:/iotdb/logs yiluxiangbei/iotdb:v1.0.0
 sudo docker ps -a|grep iotdb
 sudo docker exec -it iotdb bash
+sudo docker logs -f iotdb
+telnet localhost 2883
 
 /iotdb/sbin/start-cli.sh -h 127.0.0.1 -p 6667 -u root -pw root
 CREATE DATABASE root.ln
