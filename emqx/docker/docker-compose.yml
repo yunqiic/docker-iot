@@ -19,12 +19,12 @@ services:
         - node1.emqx.com
     ports:
       - 1883:1883
-      - 8083:8083
-      - 8084:8084
+      - 8024:8083
+      - 8025:8084
       - 8883:8883
       - 18083:18083 
-    # volumes:
-    #   - $PWD/emqx1_data:/opt/emqx/data
+    volumes:
+      - $PWD/emqx1_data:/opt/emqx/data
 
   emqx2:
     image: emqx:5.0.14
@@ -42,8 +42,8 @@ services:
       emqx-bridge:
         aliases:
         - node2.emqx.com
-    # volumes:
-    #   - $PWD/emqx2_data:/opt/emqx/data
+    volumes:
+      - $PWD/emqx2_data:/opt/emqx/data
 
 networks:
   emqx-bridge:
