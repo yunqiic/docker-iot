@@ -29,4 +29,19 @@ Username
 root
 Password
 root
+
+Forward Topic 
+foo
+
+Payload Template
+{
+ "device": "root.sg.${clientid}",
+ "timestamp": ${now_ts_ms},
+ "measurements": [
+   "bar"
+ ],
+ "values": [
+   ${bar}
+ ]
+}
 ```
