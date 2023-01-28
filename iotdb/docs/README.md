@@ -62,6 +62,7 @@ SELECT * FROM root.ln.wf01.wt01
 SET time_zone=+08:00
 SELECT * FROM root.ln.wf01.wt01
 
+SHOW DATABASES
 SHOW TIMESERIES root.sg.abc
 SELECT * FROM root.sg.abc
 
