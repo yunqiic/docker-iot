@@ -76,6 +76,12 @@ Payload Template
 ```
 
 ```
+https://www.emqx.io/docs/zh/v5/deploy/install-docker.html
+sudo docker pull emqx:5.0.14
+sudo docker run -d --name emqx -p 1883:1883 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p 18083:18083  emqx:5.0.14
+```
+
+```
 https://www.emqx.com/zh/blog/store-mqtt-messages-to-time-series-database-iotdb
 https://juejin.cn/post/6992031751790919688
 
