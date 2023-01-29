@@ -20,4 +20,6 @@ curl -d@<path-to-config file>/connect-mongodb-sink.json -H"Content-Type: applica
 
 curl -X DELETE http://localhost:8083/connectors/mqtt-source
 curl -X DELETE http://localhost:8083/connectors/mongodb-sink
+
+mqtt -> kafka -> mongo
 ```
