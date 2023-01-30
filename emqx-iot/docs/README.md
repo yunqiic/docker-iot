@@ -16,4 +16,7 @@ emqx_ctl plugins load emqx_backend_mysql
 emqx plugins
 
 https://www.emqx.com/zh/blog/emqx-plugin-persistence-series-5-mysql-mqtt-data-storage
+
+emqx tdengine
+https://www.emqx.com/zh/blog/emqx-tdengine-grafana
 ```
