@@ -62,6 +62,10 @@ SELECT
 FROM
   "sensor/data"
 
+Test
+
+topic
+sensor/data
 {
   "payload": "{\"temperature\":30,\"humidity\":20,\"volume\":44.5,\"PM10\":23,\"pm2.5\":61,\"SO2\":14,\"NO2\":4,\"CO\":5,\"id\":\"10-c6-1f-1a-1f-47\",\"area\":1,\"ts\":1596157444170}"
 }
