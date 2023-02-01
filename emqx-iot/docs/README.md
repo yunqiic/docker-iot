@@ -124,4 +124,7 @@ http://172.21.16.11:6041/rest/sql
 POST
 Authorization 的值为 Basic + TDengine 的 {username}:{password} 经过 Base64 编码之后的字符串, 例如 root:taosdata 编码后实际填入的值为：Basic cm9vdDp0YW9zZGF0YQ==
 Authorization Basic cm9vdDp0YW9zZGF0YQ==
+
+npm install mqtt mockjs --save --registry=https://registry.npm.taobao.org
+node mock.js
 ```
