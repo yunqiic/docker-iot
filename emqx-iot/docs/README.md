@@ -91,6 +91,14 @@ INSERT INTO test.sensor_data VALUES(
 )
 select * from sensor_data;
 
+tdengnine root 密码
+SHOW USERS;
+ALTER USER <user_name> PRIVILEGE <write|read>;
+
+alter user root pass '123456';
+create user test pass '123456';
+drop user test;
+
 tdengine
 http://172.21.16.11:6041/rest/sql
 POST
