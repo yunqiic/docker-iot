@@ -38,4 +38,20 @@ docker rm grafana
 sudo docker exec -it tdengine bash
 taos
 create database test;
+
+use test;
+CREATE TABLE sensor_data (
+  ts timestamp,
+  temperature float,
+  humidity float,
+  volume float,
+  PM10 float,
+  pm25 float,
+  SO2 float,
+  NO2 float,
+  CO float,
+  sensor_id NCHAR(255), 
+  area TINYINT,
+  coll_time timestamp
+);
 ```
