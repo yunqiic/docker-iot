@@ -111,6 +111,8 @@ curl -L -H "Authorization: Basic cm9vdDp0YW9zZGF0YQ==" \
 curl -L -H "Authorization: Basic dGVzdDoxMjM0NTY=" \
   -d " select * from test.sensor_data;" \
   172.21.16.11:6041/rest/sql
+  
+404 API_NOT_EXIST:Request Path Not Found
 
 alter user root pass '123456';
 create user test pass '123456';
