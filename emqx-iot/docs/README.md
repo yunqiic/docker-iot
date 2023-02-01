@@ -95,6 +95,23 @@ tdengnine root 密码
 SHOW USERS;
 ALTER USER <user_name> PRIVILEGE <write|read>;
 
+root:taosdata
+cm9vdDp0YW9zZGF0YQ==
+test:123456
+dGVzdDoxMjM0NTY=
+
+curl -L -H "Authorization: Basic cm9vdDp0YW9zZGF0YQ==" \
+  -d "select name, ntables, status from information_schema.ins_databases;" \
+  172.21.16.11:6041/rest/sql
+
+curl -L -H "Authorization: Basic cm9vdDp0YW9zZGF0YQ==" \
+  -d " select * from test.sensor_data;" \
+  172.21.16.11:6041/rest/sql
+
+curl -L -H "Authorization: Basic dGVzdDoxMjM0NTY=" \
+  -d " select * from test.sensor_data;" \
+  172.21.16.11:6041/rest/sql
+
 alter user root pass '123456';
 create user test pass '123456';
 drop user test;
