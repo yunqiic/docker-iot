@@ -25,6 +25,7 @@ emqx 4.1.1
 sudo docker run -d --name tdengine -p 6030-6041:6030-6041 tdengine/tdengine:latest
 
 ## 启动后检查容器运行状态
+sudo docker ps|grep tdengine
 sudo docker ps -a
 
 docker stop tdengine
