@@ -26,4 +26,7 @@ sudo docker run -d --name tdengine -p 6030-6041:6030-6041 tdengine/tdengine:late
 
 ## 启动后检查容器运行状态
 sudo docker ps -a
+
+docker stop tdengine
+docker rm tdengine
 ```
