@@ -19,4 +19,5 @@ https://www.emqx.com/zh/blog/emqx-plugin-persistence-series-5-mysql-mqtt-data-st
 
 emqx tdengine
 https://www.emqx.com/zh/blog/emqx-tdengine-grafana
+emqx 4.1.1
 ```
