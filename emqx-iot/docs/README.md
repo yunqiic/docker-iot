@@ -127,4 +127,8 @@ Authorization Basic cm9vdDp0YW9zZGF0YQ==
 
 npm install mqtt mockjs --save --registry=https://registry.npm.taobao.org
 node mock.js
+
+select avg(temperature), avg(humidity), avg(volume), avg(PM10), avg(pm25), avg(SO2), avg(NO2), avg(CO)  from test.sensor_data where coll_time >= $from and coll_time < $to interval($interval)
+
+select max(temperature), max(humidity), max(volume), max(PM10), max(pm25), max(SO2), max(NO2), max(CO), min(temperature), min(humidity), min(volume), min(PM10), min(pm25), min(SO2), min(NO2), min(CO)  from test.sensor_data where coll_time >= $from and coll_time < $to interval($interval)
 ```
