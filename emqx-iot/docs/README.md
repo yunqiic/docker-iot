@@ -69,4 +69,26 @@ sensor/data
 {
   "payload": "{\"temperature\":30,\"humidity\":20,\"volume\":44.5,\"PM10\":23,\"pm2.5\":61,\"SO2\":14,\"NO2\":4,\"CO\":5,\"id\":\"10-c6-1f-1a-1f-47\",\"area\":1,\"ts\":1596157444170}"
 }
+
+INSERT INTO test.sensor_data VALUES(
+  now,
+  ${payload.temperature},
+  ${payload.humidity},
+  ${payload.volume},
+  ${payload.PM10},
+  ${payload.pm25},
+  ${payload.SO2},
+  ${payload.NO2},
+  ${payload.CO},
+  '${payload.id}',
+  ${payload.area},
+  ${payload.ts}
+)
+select * from sensor_data;
+
+tdengine
+http://172.21.16.11:6041/rest/sql
+POST
+Authorization 的值为 Basic + TDengine 的 {username}:{password} 经过 Base64 编码之后的字符串, 例如 root:taosdata 编码后实际填入的值为：Basic cm9vdDp0YW9zZGF0YQ==
+Authorization Basic cm9vdDp0YW9zZGF0YQ==
 ```
