@@ -20,4 +20,10 @@ https://www.emqx.com/zh/blog/emqx-plugin-persistence-series-5-mysql-mqtt-data-st
 emqx tdengine
 https://www.emqx.com/zh/blog/emqx-tdengine-grafana
 emqx 4.1.1
+
+## 拉取并启动容器
+sudo docker run -d --name tdengine -p 6030-6041:6030-6041 tdengine/tdengine:latest
+
+## 启动后检查容器运行状态
+sudo docker ps -a
 ```
