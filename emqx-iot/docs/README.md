@@ -81,6 +81,7 @@ t/1
   "bar": "0.2"
 }
 
+https://www.emqx.io/docs/zh/v5/
 INSERT INTO test.sensor_data VALUES(
   now,
   ${payload.temperature},
