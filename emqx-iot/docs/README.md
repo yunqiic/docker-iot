@@ -116,20 +116,6 @@ INSERT INTO test.sensor_data VALUES(
 );
 INSERT INTO test.sensor_data VALUES(
   now,
-  ${temperature},
-  ${humidity},
-  ${volume},
-  ${PM10},
-  ${pm25},
-  ${SO2},
-  ${NO2},
-  ${CO},
-  '${id}',
-  ${area},
-  ${ts}
-);
-INSERT INTO test.sensor_data VALUES(
-  now,
   1,
   1,
   1,
