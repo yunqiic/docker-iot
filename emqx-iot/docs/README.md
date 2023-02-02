@@ -94,7 +94,21 @@ INSERT INTO test.sensor_data VALUES(
   '${payload.id}',
   ${payload.area},
   ${payload.ts}
-)
+);
+INSERT INTO test.sensor_data VALUES(
+  now,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  '1',
+  1,
+  now
+);
 select * from sensor_data;
 
 tdengnine root 密码
