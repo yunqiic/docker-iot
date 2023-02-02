@@ -77,17 +77,7 @@ sensor/data
 }
 
 SELECT
-  temperature,
-  humidity,
-  volume,
-  PM10,
-  pm25,
-  SO2,
-  NO2,
-  CO,
-  id,
-  area,
-  ts
+  payload
 FROM
   "sensor/data"
 {
