@@ -110,6 +110,20 @@ INSERT INTO test.sensor_data VALUES(
   1,
   now
 );
+INSERT INTO test.sensor_data VALUES(
+  now,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  1,
+  '${payload.id}',
+  1,
+  now
+);
 select * from sensor_data;
 
 tdengnine root 密码
