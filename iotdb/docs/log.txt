@@ -46,3 +46,241 @@ java.lang.NullPointerException: null
         at org.apache.iotdb.db.service.DataNodeServerCommandLine.run(DataNodeServerCommandLine.java:95)
         at org.apache.iotdb.commons.ServerCommandLine.doMain(ServerCommandLine.java:58)
         at org.apache.iotdb.db.service.DataNode.main(DataNode.java:132)
+
+rm -rf data
+
+SHOW DATABASES
++--------------+-------+-----------------------+---------------------+---------------------+---------------+-------------+
+|      Database|TTL(ms)|SchemaReplicationFactor|DataReplicationFactor|TimePartitionInterval|SchemaRegionNum|DataRegionNum|
++--------------+-------+-----------------------+---------------------+---------------------+---------------+-------------+
+|root.redirect5|   null|                      1|                    1|            604800000|              1|            2|
+|root.redirect4|   null|                      1|                    1|            604800000|              1|            2|
+|root.redirect3|   null|                      1|                    1|            604800000|              1|            2|
+|root.redirect2|   null|                      1|                    1|            604800000|              1|            2|
+|root.redirect1|   null|                      1|                    1|            604800000|              1|            2|
+|root.redirect0|   null|                      1|                    1|            604800000|              1|            2|
+|      root.sg1|   null|                      1|                    1|            604800000|              1|            2|
++--------------+-------+-----------------------+---------------------+---------------------+---------------+-------------+
+Total line number = 7
+It costs 0.131s
+
+SHOW TIMESERIES
++--------------------+-----------+--------------+--------+--------+-----------+-------------+---------------------------------+--------+---------------------------------------------+
+|          Timeseries|      Alias|      Database|DataType|Encoding|Compression|         Tags|                       Attributes|Deadband|
+      DeadbandParameters|
++--------------------+-----------+--------------+--------+--------+-----------+-------------+---------------------------------+--------+---------------------------------------------+
+|      root.sg1.d1.s3|       null|      root.sg1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|      root.sg1.d1.s4|temperature|      root.sg1|   INT64|     RLE|     SNAPPY|{"tag1":"v1"}|             {"description":"v1"}|    null|
+                    null|
+|      root.sg1.d1.s5|       null|      root.sg1|   INT64|     RLE|     SNAPPY|         null|                             null|     SDT|{compdev=0.01, compmintime=2, compmaxtime=10}|
+|      root.sg1.d1.s1|       null|      root.sg1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|      root.sg1.d1.s2|       null|      root.sg1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|      root.sg1.d2.s1|    weight1|      root.sg1|   INT64|     RLE|     SNAPPY|{"unit":"kg"}|{"minValue":"1","maxValue":"100"}|    null|
+                    null|
+|      root.sg1.d2.s2|    weight2|      root.sg1|   INT64|     RLE|     SNAPPY|{"unit":"kg"}|{"minValue":"1","maxValue":"100"}|    null|
+                    null|
+|root.redirect0.d0.s3|       null|root.redirect0|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect0.d0.s1|       null|root.redirect0|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect0.d0.s2|       null|root.redirect0|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect0.d1.s3|       null|root.redirect0|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect0.d1.s1|       null|root.redirect0|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect0.d1.s2|       null|root.redirect0|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect1.d0.s3|       null|root.redirect1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect1.d0.s1|       null|root.redirect1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect1.d0.s2|       null|root.redirect1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect1.d1.s3|       null|root.redirect1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect1.d1.s1|       null|root.redirect1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect1.d1.s2|       null|root.redirect1|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect2.d0.s3|       null|root.redirect2|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect2.d0.s1|       null|root.redirect2|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect2.d0.s2|       null|root.redirect2|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect2.d1.s3|       null|root.redirect2|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect2.d1.s1|       null|root.redirect2|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect2.d1.s2|       null|root.redirect2|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect3.d0.s3|       null|root.redirect3|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect3.d0.s1|       null|root.redirect3|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect3.d0.s2|       null|root.redirect3|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect3.d1.s3|       null|root.redirect3|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect3.d1.s1|       null|root.redirect3|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect3.d1.s2|       null|root.redirect3|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect4.d0.s3|       null|root.redirect4|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect4.d0.s1|       null|root.redirect4|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect4.d0.s2|       null|root.redirect4|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect4.d1.s3|       null|root.redirect4|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect4.d1.s1|       null|root.redirect4|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect4.d1.s2|       null|root.redirect4|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect5.d0.s3|       null|root.redirect5|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect5.d0.s1|       null|root.redirect5|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect5.d0.s2|       null|root.redirect5|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect5.d1.s3|       null|root.redirect5|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect5.d1.s1|       null|root.redirect5|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
+|root.redirect5.d1.s2|       null|root.redirect5|   INT64|     RLE|     SNAPPY|         null|                             null|    null|
+                    null|
++--------------------+-----------+--------------+--------+--------+-----------+-------------+---------------------------------+--------+---------------------------------------------+
+Total line number = 43
+It costs 0.032s
+
+[Time, root.redirect0.d1.s3, root.redirect0.d1.s1, root.redirect0.d1.s2]
+0       3       1       2
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect1.d1.s3, root.redirect1.d1.s1, root.redirect1.d1.s2]
+0       3       1       2
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect2.d1.s3, root.redirect2.d1.s1, root.redirect2.d1.s2]
+0       3       1       2
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect3.d1.s3, root.redirect3.d1.s1, root.redirect3.d1.s2]
+0       3       1       2
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect4.d1.s3, root.redirect4.d1.s1, root.redirect4.d1.s2]
+0       3       1       2
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect5.d1.s3, root.redirect5.d1.s1, root.redirect5.d1.s2]
+0       3       1       2
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect0.d1.s3, root.redirect0.d1.s1, root.redirect0.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect1.d1.s3, root.redirect1.d1.s1, root.redirect1.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect2.d1.s3, root.redirect2.d1.s1, root.redirect2.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect3.d1.s3, root.redirect3.d1.s1, root.redirect3.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect4.d1.s3, root.redirect4.d1.s1, root.redirect4.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect5.d1.s3, root.redirect5.d1.s1, root.redirect5.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, Device, s3, s1, s2]
+1       root.redirect0.d1       4       2       3
+2       root.redirect0.d1       5       3       4
+3       root.redirect0.d1       6       4       5
+4       root.redirect0.d1       7       5       6
+[Time, Device, s3, s1, s2]
+1       root.redirect1.d1       4       2       3
+2       root.redirect1.d1       5       3       4
+3       root.redirect1.d1       6       4       5
+4       root.redirect1.d1       7       5       6
+[Time, Device, s3, s1, s2]
+1       root.redirect2.d1       4       2       3
+2       root.redirect2.d1       5       3       4
+3       root.redirect2.d1       6       4       5
+4       root.redirect2.d1       7       5       6
+[Time, Device, s3, s1, s2]
+1       root.redirect3.d1       4       2       3
+2       root.redirect3.d1       5       3       4
+3       root.redirect3.d1       6       4       5
+4       root.redirect3.d1       7       5       6
+[Time, Device, s3, s1, s2]
+1       root.redirect4.d1       4       2       3
+2       root.redirect4.d1       5       3       4
+3       root.redirect4.d1       6       4       5
+4       root.redirect4.d1       7       5       6
+[Time, Device, s3, s1, s2]
+1       root.redirect5.d1       4       2       3
+2       root.redirect5.d1       5       3       4
+3       root.redirect5.d1       6       4       5
+4       root.redirect5.d1       7       5       6
+[Time, root.redirect0.d1.s3, root.redirect0.d1.s1, root.redirect0.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect1.d1.s3, root.redirect1.d1.s1, root.redirect1.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect2.d1.s3, root.redirect2.d1.s1, root.redirect2.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect3.d1.s3, root.redirect3.d1.s1, root.redirect3.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect4.d1.s3, root.redirect4.d1.s1, root.redirect4.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6
+[Time, root.redirect5.d1.s3, root.redirect5.d1.s1, root.redirect5.d1.s2]
+1       4       2       3
+2       5       3       4
+3       6       4       5
+4       7       5       6

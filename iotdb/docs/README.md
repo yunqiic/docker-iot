@@ -52,6 +52,8 @@ sudo docker exec -it iotdb bash
 /iotdb/sbin/start-cli.sh -h 127.0.0.1 -p 6667 -u root -pw root
 CREATE DATABASE root.ln
 SHOW DATABASES
+drop database root.sg1;
+drop database root.redirect0;
 CREATE TIMESERIES root.ln.wf01.wt01.status WITH DATATYPE=BOOLEAN, ENCODING=PLAIN
 CREATE TIMESERIES root.ln.wf01.wt01.temperature WITH DATATYPE=FLOAT, ENCODING=RLE
 SHOW TIMESERIES
