@@ -186,3 +186,89 @@ sudo docker run --name heart-rate -itd -p 8011:8000 yiluxiangbei/heart-rate-dete
 sudo docker run --name heart-rate -itd -v $(pwd):/app -p 8011:8000 yiluxiangbei/heart-rate-detection:v2
 docker run --rm -it registry.cn-hangzhou.aliyuncs.com/rotanova/rotanava-boot-module-gateway:1.0.0 sh
 ```
+
+```
+//显示版本
+show version
+ 
+//新建存储组
+SET STORAGE GROUP TO root.test
+ 
+//显示已经创建的存储组
+SHOW STORAGE GROUP
+ 
+//删除存储组
+delete storage group root.test
+ 
+//创建时间序列
+create timeseries root.test.wf01.wt01.s0(elec_meter) with datatype=FLOAT, encoding=RLE, compression=SNAPPY,MAX_POINT_NUMBER=3 tags(tag1=t1, tag2=t2) attributes(attr1=a1, attr2=a2)
+ 
+//删除时间序列
+delete timeseries root.test.wf01.wt01.s0
+delete timeseries root.test.wf01.wt01.*
+ 
+//更改时间序列
+alter timeseries root.test.wf01.wt01.s0 DROP tag1, tag2
+alter timeseries root.test.wf01.wt01.s0 SET tag1=t3, attr1=a3
+alter timeseries root.test.wf01.wt01.s0 ADD TAGS tag3=t3, tag4=t4
+ 
+//显示存储组下时间序列
+show timeseries root.test
+ 
+//模糊查询设备下的序列
+show timeseries root.test.*.wt01
+ 
+//加条件的查询时间序列
+show timeseries root.test where tag1=t1
+ 
+//统计时间序列
+count timeseries root.test.*.wt01
+ 
+//根据层级分组，统计出每组下的时间序列个数
+count timeseries root.test group by level=3
+ 
+//统计存储组对应的层级下有几个节点
+count nodes root.test level=3
+ 
+//统计存储组下几个设备
+show devices root.test
+ 
+//显示某一层下的子路径
+show child paths root.test.wf01
+
+# CRUD
+//插入记录
+insert into root.test.wf01.wt02(timestamp,elec_meter) values (1,23.896)
+ 
+//更新记录
+insert同时间戳覆盖即可
+ 
+//删除记录
+delete from root.test.wf01.wt02.s0,root.test.wf01.wt02.s1 where time < now()
+ 
+ 
+//查询记录
+select temperature from root.test.wf01.wt01 where time >0 and time <5
+select count(s0) from root.test.wf01.wt02 WHERE root.test.wf01.wt02.s0 < 25
+select max_value(s0) from root.test.wf01.wt02 where time < now() - 5h
+select min_time(s0) from root.test.wf01.wt02
+ 
+//排序 0.11
+select * from root.test.wf01.wt01 where time > 1 order by time desc limit 10;
+ 
+//分组应用
+//统计这段时间区间内（前包，后不包）每隔5分钟统计s0个数
+select count(s0) from root.test.wf01.wt02 group by ([1,259222222),5m)
+//统计这段时间内每隔5小时，前2个小时有数据个数
+select count(s0) from root.test.wf01.wt02 group by ([86400000,259222222),2h,5h)
+ 
+ 
+ 
+//分页
+//时间戳升序，首条下标为0，取3条
+select * from root.test.wf01.wt02 limit 3 offset 0
+ 
+ 
+//筛选最后一条记录
+select last temperature from root.test.wf01.wt02
+```
