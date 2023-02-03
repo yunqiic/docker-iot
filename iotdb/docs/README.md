@@ -37,6 +37,7 @@ sudo docker run --name iotdb -itd -p 2883:1883 -p 6667:6667 -v "$(pwd)"/data:/io
 sudo docker ps -a|grep iotdb
 sudo docker exec -it iotdb bash
 apt-get install telnet
+apt-get install net-tools
 sudo docker logs -f iotdb
 telnet localhost 2883
 telnet 172.21.16.11 2883
