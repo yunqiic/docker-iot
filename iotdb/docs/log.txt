@@ -25,3 +25,24 @@ tcp        0      0 127.0.0.1:9003          0.0.0.0:*               LISTEN      
 tcp        0      0 0.0.0.0:50010           0.0.0.0:*               LISTEN      7/java
 tcp        0      0 0.0.0.0:1883            0.0.0.0:*               LISTEN      7/java
 tcp        0      0 127.0.0.1:22277         0.0.0.0:*               LISTEN      36/java
+
+2023-02-03 06:36:07,157 [main] ERROR o.a.i.db.service.DataNode:273 - Cannot register datanode with wrong id. Maybe it's already removed, or it has another datanode's run-time properties.
+2023-02-03 06:36:07,161 [main] ERROR o.a.i.db.service.DataNode:181 - Fail to start server
+org.apache.iotdb.commons.exception.StartupException: Cannot register to the cluster.
+        at org.apache.iotdb.db.service.DataNode.registerInConfigNode(DataNode.java:274)
+        at org.apache.iotdb.db.service.DataNode.doAddNode(DataNode.java:160)
+        at org.apache.iotdb.db.service.DataNodeServerCommandLine.run(DataNodeServerCommandLine.java:95)
+        at org.apache.iotdb.commons.ServerCommandLine.doMain(ServerCommandLine.java:58)
+        at org.apache.iotdb.db.service.DataNode.main(DataNode.java:132)
+2023-02-03 06:36:07,161 [main] INFO  o.a.i.db.service.DataNode:698 - Deactivating IoTDB DataNode...
+2023-02-03 06:36:07,162 [main] INFO  o.a.i.c.s.RegisterManager:67 - deregister all service.
+2023-02-03 06:36:07,162 [main] INFO  o.a.i.db.service.DataNode:703 - IoTDB DataNode is deactivated.
+2023-02-03 06:36:07,168 [main] INFO  o.a.i.c.s.m.MetricService:73 - Stop metric service
+2023-02-03 06:36:07,168 [main] INFO  o.a.i.c.s.m.MetricService:78 - Finish stopping metric service
+2023-02-03 06:36:07,169 [main] ERROR o.a.i.db.service.DataNode:676 - Stop data node error
+java.lang.NullPointerException: null
+        at org.apache.iotdb.db.service.DataNode.stop(DataNode.java:673)
+        at org.apache.iotdb.db.service.DataNode.doAddNode(DataNode.java:182)
+        at org.apache.iotdb.db.service.DataNodeServerCommandLine.run(DataNodeServerCommandLine.java:95)
+        at org.apache.iotdb.commons.ServerCommandLine.doMain(ServerCommandLine.java:58)
+        at org.apache.iotdb.db.service.DataNode.main(DataNode.java:132)
