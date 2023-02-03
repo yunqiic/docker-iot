@@ -13,3 +13,15 @@ SHOW TIMESERIES
 +-----------------------------+-----+--------+--------+--------+-----------+----+----------+--------+------------------+
 Total line number = 3
 It costs 0.030s
+
+netstat -tlnp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22278           0.0.0.0:*               LISTEN      36/java
+tcp        0      0 127.0.0.1:8777          0.0.0.0:*               LISTEN      7/java
+tcp        0      0 127.0.0.1:40010         0.0.0.0:*               LISTEN      7/java
+tcp        0      0 127.0.0.1:6667          0.0.0.0:*               LISTEN      7/java
+tcp        0      0 127.0.0.1:9003          0.0.0.0:*               LISTEN      7/java
+tcp        0      0 0.0.0.0:50010           0.0.0.0:*               LISTEN      7/java
+tcp        0      0 0.0.0.0:1883            0.0.0.0:*               LISTEN      7/java
+tcp        0      0 127.0.0.1:22277         0.0.0.0:*               LISTEN      36/java
