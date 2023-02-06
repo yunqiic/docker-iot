@@ -161,7 +161,11 @@ curl -L -H "Authorization: Basic cm9vdDp0YW9zZGF0YQ==" \
   172.21.16.11:6041/rest/sql
 
 curl -L -H "Authorization: Basic cm9vdDp0YW9zZGF0YQ==" \
-  -d " select * from test.sensor_data;" \
+  -d "select * from test.sensor_data;" \
+  172.21.16.11:6041/rest/sql
+
+curl -L -H "Authorization: Basic cm9vdDp0YW9zZGF0YQ==" \
+  -d "select avg(temperature) as temperature from test.sensor_data" \
   172.21.16.11:6041/rest/sql
 
 curl -L -H "Authorization: Basic dGVzdDoxMjM0NTY=" \
