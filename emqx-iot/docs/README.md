@@ -219,6 +219,7 @@ Panel plugin not found: grafana-piechart-panel
 
 基于Web内核的微信小程序框架实践
 https://cloud.tencent.com/developer/article/1935712
+Progressive web applications
 
 sudo docker exec -it tdengine bash
 taos
