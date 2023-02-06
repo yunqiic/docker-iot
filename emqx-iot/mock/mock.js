@@ -50,6 +50,8 @@ function createClient(clientId) {
   return new Promise((resolve, reject) => {
     const client = mqtt.connect(EMQX_SERVER, {
       clientId,
+      username: 'test',
+      password: 'test'
     })
     client.on('connect', () => {
       console.log(`client ${clientId} connected`)
