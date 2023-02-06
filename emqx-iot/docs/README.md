@@ -194,6 +194,14 @@ admin
 admin2023
 
 TDengine plugin
+https://grafana.com/grafana/plugins/tdengine-datasource/
+
+docker exec -it grafana bash
+bash -c "$(curl -fsSL \
+  https://raw.githubusercontent.com/taosdata/grafanaplugin/master/install.sh)" -- \
+  -a http://172.21.16.11:6041 \
+  -u root \
+  -p taosdata
 
 select avg(temperature), avg(humidity), avg(volume), avg(PM10), avg(pm25), avg(SO2), avg(NO2), avg(CO)  from test.sensor_data where coll_time >= $from and coll_time < $to interval($interval)
 
