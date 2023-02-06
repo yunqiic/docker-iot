@@ -171,6 +171,8 @@ curl -L -H "Authorization: Basic dGVzdDoxMjM0NTY=" \
 404 API_NOT_EXIST:Request Path Not Found
 {"code": "API_NOT_EXIST", "message": "Request Path Not Found"}
 
+mqtt://49.232.6.131:1883
+
 alter user root pass '123456';
 create user test pass '123456';
 drop user test;
