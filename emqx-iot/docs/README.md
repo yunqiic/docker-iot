@@ -187,7 +187,9 @@ cnpm install mqtt mockjs --save
 https://github.com/coco-iot/MQTT.js
 node mock.js
 
-sudo docker run -d --name=grafana -p 3000:3000 grafana/grafana
+sudo docker run -d --name=grafana -p 3000:3000 grafana/grafana:9.3.6
+sudo docker stop grafana
+sudo docker start grafana
 http://49.232.6.131:3000/
 admin
 admin
