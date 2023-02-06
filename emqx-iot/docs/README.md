@@ -211,8 +211,14 @@ bash -c "$(curl -fsSL \
   -p taosdata
 
 http://172.21.16.11:6041
+http://172.21.16.11:6041/rest/sql
 root
 taosdata
+
+Panel plugin not found: grafana-piechart-panel
+
+基于Web内核的微信小程序框架实践
+https://cloud.tencent.com/developer/article/1935712
 
 sudo docker exec -it tdengine bash
 taos
