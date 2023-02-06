@@ -191,6 +191,9 @@ sudo docker run -d --name=grafana -p 3000:3000 grafana/grafana
 http://49.232.6.131:3000/
 admin
 admin
+admin2023
+
+TDengine plugin
 
 select avg(temperature), avg(humidity), avg(volume), avg(PM10), avg(pm25), avg(SO2), avg(NO2), avg(CO)  from test.sensor_data where coll_time >= $from and coll_time < $to interval($interval)
 
