@@ -184,6 +184,7 @@ Authorization Basic cm9vdDp0YW9zZGF0YQ==
 mqtt://49.232.6.131:1883
 npm install mqtt mockjs --save --registry=https://registry.npm.taobao.org
 cnpm install mqtt mockjs --save
+https://github.com/coco-iot/MQTT.js
 node mock.js
 
 select avg(temperature), avg(humidity), avg(volume), avg(PM10), avg(pm25), avg(SO2), avg(NO2), avg(CO)  from test.sensor_data where coll_time >= $from and coll_time < $to interval($interval)
