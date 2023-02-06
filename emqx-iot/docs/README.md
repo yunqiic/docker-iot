@@ -171,8 +171,6 @@ curl -L -H "Authorization: Basic dGVzdDoxMjM0NTY=" \
 404 API_NOT_EXIST:Request Path Not Found
 {"code": "API_NOT_EXIST", "message": "Request Path Not Found"}
 
-mqtt://49.232.6.131:1883
-
 alter user root pass '123456';
 create user test pass '123456';
 drop user test;
@@ -183,7 +181,9 @@ POST
 Authorization 的值为 Basic + TDengine 的 {username}:{password} 经过 Base64 编码之后的字符串, 例如 root:taosdata 编码后实际填入的值为：Basic cm9vdDp0YW9zZGF0YQ==
 Authorization Basic cm9vdDp0YW9zZGF0YQ==
 
+mqtt://49.232.6.131:1883
 npm install mqtt mockjs --save --registry=https://registry.npm.taobao.org
+cnpm install mqtt mockjs --save
 node mock.js
 
 select avg(temperature), avg(humidity), avg(volume), avg(PM10), avg(pm25), avg(SO2), avg(NO2), avg(CO)  from test.sensor_data where coll_time >= $from and coll_time < $to interval($interval)
